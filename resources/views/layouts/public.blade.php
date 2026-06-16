@@ -1,3 +1,4 @@
+{{-- resources/views/layouts/public.blade.php --}}
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -26,22 +27,23 @@
             <ul class="navbar-nav ms-auto align-items-lg-center">
                 @php
                     $nav = [
-                        'public.home' => 'Home',
-                        'public.profil' => 'Profil PLN',
-                        'public.bahaya' => 'Bahaya',
-                        'public.risiko' => 'Risiko K3',
-                        'public.apd' => 'APD',
-                        'public.sop' => 'SOP',
-                        'public.evakuasi' => 'Evakuasi',
+                        'public.home'      => 'Home',
+                        'public.profil'    => 'Profil PLN',
+                        'public.bahaya'    => 'Bahaya',
+                        'public.risiko'    => 'Risiko K3',
+                        'public.apd'       => 'APD',
+                        'public.sop'       => 'SOP',
+                        'public.evakuasi'  => 'Evakuasi',
                         'public.kesehatan' => 'Kesehatan',
-                        'public.tim' => 'Tim K3',
-                        'public.denah' => 'Denah',
-                        'public.kesimpulan' => 'Kesimpulan',
+                        'public.tim'       => 'Tim K3',
+                        'public.denah'     => 'Denah',
+                        'public.kesimpulan'=> 'Kesimpulan',
                     ];
                 @endphp
                 @foreach ($nav as $route => $label)
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs($route) ? 'active' : '' }}" href="{{ route($route) }}">{{ $label }}</a>
+                        <a class="nav-link {{ request()->routeIs($route) ? 'active' : '' }}"
+                           href="{{ route($route) }}">{{ $label }}</a>
                     </li>
                 @endforeach
                 <li class="nav-item ms-lg-2">
@@ -88,7 +90,7 @@
             </div>
         </div>
         <hr class="border-secondary my-4">
-        <p class="small mb-0 text-center">&copy; {{ date('Y') }} PT PLN (Persero) — Sistem Informasi K3. Dibangun untuk tujuan edukasi K3.</p>
+        <p class="small mb-0 text-center">&copy; {{ date('Y') }} PT PLN (Persero) — Sistem Informasi K3.</p>
     </div>
 </footer>
 

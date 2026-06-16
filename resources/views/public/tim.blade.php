@@ -19,7 +19,8 @@
                     <div class="card-k3 p-4 h-100">
                         <div class="d-flex justify-content-between align-items-start mb-2">
                             <div class="card-icon"><i class="bi bi-person-badge"></i></div>
-                            <span class="badge bg-light text-pln border">{{ \App\Models\TeamMember::LEVELS[$m->level] ?? $m->level }}</span>
+                            @php $levelLabel = \App\Models\TeamMember::LEVELS[$m->level] ?? ucfirst(str_replace('_', ' ', $m->level)); @endphp
+                            <span class="badge bg-light text-pln border">{{ $levelLabel }}</span>
                         </div>
                         <h6 class="fw-bold mb-1">{{ $m->position }}</h6>
                         @if ($m->name)<div class="small text-pln mb-1">{{ $m->name }}</div>@endif
